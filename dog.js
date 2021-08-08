@@ -11,9 +11,8 @@ function createDogs() {
 		.then(function (processedResponse) {
 			const img = document.createElement("img");
 			img.src = processedResponse.message;
-			img.alt = "cute dog";
-			img.style.width = 500;
-			img.style.height = 500;
+			img.style.cssText =
+				"width:90%;margin:10px;padding: 5px;border:2px solid brown;";
 			dog.appendChild(img);
 		});
 }
