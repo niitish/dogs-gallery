@@ -1,8 +1,11 @@
-const DOG_URL = "https://dog.ceo/api/breeds/image/random";
 const dog = document.querySelector(".dogs");
+var selectedBreed = document.querySelector(".selected");
 
-function createDogs() {
-	const promise = fetch(DOG_URL);
+function createDogs(breed) {
+	var url = "";
+	if (breed === "") url = "https://dog.ceo/api/breeds/image/random";
+	else url = `https://dog.ceo/api/breed/${breed}/images/random`;
+	const promise = fetch(url);
 	promise
 		.then(function (response) {
 			const processingPromise = response.json();
@@ -10,6 +13,7 @@ function createDogs() {
 		})
 		.then(function (processedResponse) {
 			const img = document.createElement("img");
+			console.log(processedResponse.message);
 			img.src = processedResponse.message;
 			img.style.cssText =
 				"width:90%;margin:10px;padding: 5px;border:2px solid brown;";
@@ -17,4 +21,6 @@ function createDogs() {
 		});
 }
 
-document.querySelector(".create").addEventListener("click", createDogs);
+document.querySelector(".create").addEventListener("click", () => {
+	createDogs(selectedBreed.value);
+});
