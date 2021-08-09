@@ -34,3 +34,9 @@
 	right: 30px;
 	cursor: pointer;
 }
+
+.dropdown {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
