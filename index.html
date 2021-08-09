@@ -9,11 +9,17 @@
 	</head>
 	<body>
 		<p class="instr">
-			Tap on the + button (at the bottom right) to fetch a Dog's photo.
+			Type a breed name below and tap on the + button for photos of a
+			single breed. Else just tap on + button for random dog photos.
 		</p>
-		<div class="breeds"></div>
+
+		<div class="dropdown">
+			<input list="dog-breeds" class="selected" />
+			<datalist id="dog-breeds" class="breed-selector"> </datalist>
+		</div>
 		<div class="dogs"></div>
 		<button class="create">+</button>
+		<script src="breedSelector.js"></script>
 		<script src="dog.js"></script>
 	</body>
 </html>
