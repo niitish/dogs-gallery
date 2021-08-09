@@ -1,9 +1,9 @@
 const dog = document.querySelector(".dogs");
-var selectedBreed = document.querySelector(".selected");
+var selectedBreed = document.querySelector(".breed-selector");
 
 function createDogs(breed) {
 	var url = "";
-	if (breed === "") url = "https://dog.ceo/api/breeds/image/random";
+	if (breed === " ") url = "https://dog.ceo/api/breeds/image/random";
 	else url = `https://dog.ceo/api/breed/${breed}/images/random`;
 	const promise = fetch(url);
 	promise
@@ -22,5 +22,6 @@ function createDogs(breed) {
 }
 
 document.querySelector(".create").addEventListener("click", () => {
-	createDogs(selectedBreed.value);
+	if (!selectedBreed.value) createDogs(" ");
+	else createDogs(selectedBreed.value);
 });
