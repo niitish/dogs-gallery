@@ -9,7 +9,7 @@ function createList() {
 		})
 		.then(function (processedResponse) {
 			var breedsList = Object.keys(processedResponse.message);
-			drop.innerHTML = "";
+			// drop.innerHTML = "";
 			breedsList.forEach((breed) => {
 				var html = `<option>${breed}</option> `;
 				drop.innerHTML += html;
