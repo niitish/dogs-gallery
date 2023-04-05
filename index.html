@@ -4,23 +4,31 @@
 		<meta charset="UTF-8" />
 		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<link rel="stylesheet" href="dog.css" />
+		<link rel="stylesheet" href="style.css" />
 		<title>Random Dog Photos</title>
+		<script
+			src="https://kit.fontawesome.com/c696a32e87.js"
+			crossorigin="anonymous"
+		></script>
 	</head>
 	<body>
-		<p class="instr">
-			Select a breed name below and tap on the + button for photos of a
-			single breed. Else just tap on + button for random dog photos.
-		</p>
-
-		<div class="dropdown">
-			<select name="dog-breeds" class="breed-selector">
-				<option value=" ">random</option>
-			</select>
-		</div>
+		<div class="head">Dogs' Gallery</div>
 		<div class="dogs"></div>
-		<button class="create">+</button>
-		<script src="breedSelector.js"></script>
+		<div class="bottombar">
+			<p class="info expand">
+				<i class="fa-solid fa-circle-info"></i>
+				<span>Let's fetch some Dogs</span>
+			</p>
+			<div class="dropdown">
+				<select name="dog-breeds" class="breed-selector">
+					<option value=" ">Random</option>
+				</select>
+			</div>
+			<button class="create expand">
+				<i class="fa-solid fa-circle-plus"></i>
+				<span>Fetch a dog</span>
+			</button>
+		</div>
 		<script src="dog.js"></script>
 	</body>
 </html>
